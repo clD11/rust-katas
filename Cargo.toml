@@ -1,0 +1,6 @@
+[package]
+name = "rust-katas"
+version = "0.1.0"
+authors = ["clD11 <23483715+clD11@users.noreply.github.com>"]
+
+[dependencies]
