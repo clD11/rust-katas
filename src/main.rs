@@ -1,5 +1,6 @@
 mod guessinggame;
 mod slice;
+mod rectangle;
 
 extern crate rand;
 
