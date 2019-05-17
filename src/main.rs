@@ -1,9 +1,9 @@
-mod guessinggame;
+mod guessing_game;
 mod slice;
 mod rectangle;
 
 extern crate rand;
 
 fn main() {
-    guessinggame::guess();
+    guessing_game::guess();
 }
