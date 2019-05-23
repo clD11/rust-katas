@@ -2,7 +2,7 @@ mod guessing_game;
 mod slice;
 mod rectangle;
 mod defining_enums;
-mod setters_and_getters;
+mod macros;
 
 extern crate rand;
 
