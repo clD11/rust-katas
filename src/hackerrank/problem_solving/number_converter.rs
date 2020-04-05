@@ -36,28 +36,28 @@ pub fn to_roman_numeral(number: u32) -> String {
 }
 
 #[test]
-fn should_convert_normal_numbers_to_roman_numerals_I() {
+fn should_convert_normal_numbers_to_roman_numerals_i() {
     let expected = "I";
     let actual = to_roman_numeral(1);
     assert_eq!(actual, expected);
 }
 
 #[test]
-fn should_convert_normal_numbers_to_roman_numerals_IV() {
+fn should_convert_normal_numbers_to_roman_numerals_iv() {
     let expected = "IV";
     let actual = to_roman_numeral(4);
     assert_eq!(actual, expected);
 }
 
 #[test]
-fn should_convert_normal_numbers_to_roman_numerals_XI() {
+fn should_convert_normal_numbers_to_roman_numerals_xi() {
     let expected = "XI";
     let actual = to_roman_numeral(11);
     assert_eq!(actual, expected);
 }
 
 #[test]
-fn should_convert_normal_numbers_to_roman_numerals_CMLXXXVIII() {
+fn should_convert_normal_numbers_to_roman_numerals_cmlxxxviii() {
     let expected = "CMLXXXVIII";
     let actual = to_roman_numeral(988);
     assert_eq!(actual, expected);
