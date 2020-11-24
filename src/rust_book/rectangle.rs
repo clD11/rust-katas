@@ -21,9 +21,7 @@ impl Rectangle {
         self.height * self.width
     }
 
-    fn can_hold(&self, rectangle: &Rectangle) -> bool {
-        self.area() >= rectangle.area()
-    }
+    fn can_hold(&self, rectangle: &Rectangle) -> bool { self.area() >= rectangle.area() }
 }
 
 #[test]
