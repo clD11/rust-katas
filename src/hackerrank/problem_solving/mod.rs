@@ -4,3 +4,5 @@ pub mod distinct_pairs;
 pub mod number_converter;
 pub mod find_digits;
 pub mod fair_rations;
+pub mod pairs;
+pub mod fizz_buzz;
