@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-fn find_pairs_to_target(input: Vec<u32>, target: u32) -> u32 {
+pub fn find_pairs_to_target(input: Vec<u32>, target: u32) -> u32 {
     let mut numbers: HashMap<u32, bool> = HashMap::new();
     for i in &input {
         numbers.entry(*i).or_insert(true);
