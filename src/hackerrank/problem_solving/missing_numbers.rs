@@ -4,7 +4,7 @@ use std::io::{BufRead, Stdin};
 use std::collections::HashMap;
 use std::collections::HashSet;
 
-fn missing_numbers(arr: &Vec<u32>, brr: &Vec<u32>) -> HashSet<u32> {
+fn missing_numbers(arr: &Vec<u32>, brr: &Vec<u32>) -> Vec<u32> {
     let mut arr_to_freq: HashMap<&u32, i32> = HashMap::new();
     for a in arr {
         arr_to_freq.entry(&a)
@@ -23,7 +23,9 @@ fn missing_numbers(arr: &Vec<u32>, brr: &Vec<u32>) -> HashSet<u32> {
         }
     }
 
-    missing_numbers
+    let mut missing_numbers_ordered = missing_numbers.into_iter().collect::<Vec<u32>>();
+    missing_numbers_ordered.sort();
+    missing_numbers_ordered
 }
 
 fn read_num() -> u32 {
@@ -56,12 +58,9 @@ mod tests {
     fn should_find_missing_numbers_1() {
         let arr: Vec<u32> = vec![203, 204, 205, 206, 207, 208, 203, 204, 205, 206];
         let brr: Vec<u32> = vec![203, 204, 204, 205, 206, 207, 205, 208, 203, 206, 205, 206, 204];
-        let actual: HashSet<u32> = missing_numbers(&arr, &brr);
+        let actual: Vec<u32> = missing_numbers(&arr, &brr);
 
-        let mut expected: HashSet<u32> = HashSet::new();
-        expected.insert(204);
-        expected.insert(205);
-        expected.insert(206);
+        let mut expected: Vec<u32> = vec![204, 205, 206];
 
         assert_eq!(actual, expected);
     }
@@ -70,11 +69,9 @@ mod tests {
     fn should_find_missing_numbers_2() {
         let arr: Vec<u32> = vec![7, 2, 5, 3, 5, 3];
         let brr: Vec<u32> = vec![7, 2, 5, 4, 6, 3, 5, 3];
-        let actual: HashSet<u32> = missing_numbers(&arr, &brr);
+        let actual: Vec<u32> = missing_numbers(&arr, &brr);
 
-        let mut expected: HashSet<u32> = HashSet::new();
-        expected.insert(4);
-        expected.insert(6);
+        let mut expected: Vec<u32> = vec![4, 6];
 
         assert_eq!(actual, expected);
     }
