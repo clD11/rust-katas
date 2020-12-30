@@ -7,3 +7,4 @@ pub mod fair_rations;
 pub mod pairs;
 pub mod fizz_buzz;
 pub mod ice_cream_parlor;
+pub mod missing_numbers;

@@ -9,5 +9,5 @@ use std::io;
 use std::io::{BufRead};
 
 fn main() {
-    hackerrank::problem_solving::ice_cream_parlor::read();
+    hackerrank::problem_solving::missing_numbers::main();
 }
