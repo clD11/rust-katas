@@ -9,5 +9,5 @@ use std::io;
 use std::io::{BufRead};
 
 fn main() {
-    hackerrank::problem_solving::missing_numbers::main();
+    hackerrank::problem_solving::sherlock_and_array::run();
 }
