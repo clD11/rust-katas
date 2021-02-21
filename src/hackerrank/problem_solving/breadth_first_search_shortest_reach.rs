@@ -26,10 +26,6 @@ impl Graph {
 
 }
 
-fn find_shortest_reach() -> Vec<usize> {
-
-}
-
 #[cfg(test)]
 mod tests {
 
