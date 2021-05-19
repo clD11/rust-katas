@@ -10,3 +10,5 @@ pub mod ice_cream_parlor;
 pub mod missing_numbers;
 pub mod sherlock_and_array;
 pub mod breadth_first_search_shortest_reach;
+pub mod fizz_buzz_two;
+pub mod append_and_delete;
