@@ -64,15 +64,6 @@ fn balanced_sums(arr: &Vec<u32>) -> &str {
     "NO"
 }
 
-pub fn run() {
-    let cases: u32 = read_num();
-    for i in 0..cases {
-        let _ignore = read_num();
-        let input = read_vec();
-        println!("{}", balanced_sums(&input));
-    }
-}
-
 #[cfg(test)]
 mod tests {
 
