@@ -35,3 +35,15 @@ pub fn read_str_lines(n: u32) -> Vec<String> {
     }
     result
 }
+
+fn read_lines() {
+    let mut num = String::new();
+    io::stdin().read_line(&mut num).expect("Fail");
+    let n: u32 = num.trim().parse().unwrap();
+
+    for i in 0..n {
+        let mut str_vec = String::new();
+        io::stdin().read_line(&mut str_vec).expect("Fail");
+        str_vec.truncate(str_vec.len() - 1);
+    }
+}

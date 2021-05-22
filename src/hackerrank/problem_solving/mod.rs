@@ -13,3 +13,4 @@ pub mod breadth_first_search_shortest_reach;
 pub mod fizz_buzz_two;
 pub mod append_and_delete;
 pub mod gem_stones;
+pub mod alternating_characters;
