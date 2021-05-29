@@ -1,5 +1,4 @@
 use std::io;
-use std::io::BufRead;
 
 use std::collections::HashMap;
 use std::collections::HashSet;
@@ -61,7 +60,7 @@ mod tests {
         ];
         let actual: Vec<u32> = missing_numbers(&arr, &brr);
 
-        let mut expected: Vec<u32> = vec![204, 205, 206];
+        let expected: Vec<u32> = vec![204, 205, 206];
 
         assert_eq!(actual, expected);
     }
@@ -72,7 +71,7 @@ mod tests {
         let brr: Vec<u32> = vec![7, 2, 5, 4, 6, 3, 5, 3];
         let actual: Vec<u32> = missing_numbers(&arr, &brr);
 
-        let mut expected: Vec<u32> = vec![4, 6];
+        let expected: Vec<u32> = vec![4, 6];
 
         assert_eq!(actual, expected);
     }

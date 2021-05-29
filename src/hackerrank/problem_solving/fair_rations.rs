@@ -11,14 +11,14 @@ pub fn fair_rations(arr: &[u32]) -> &'static str {
 }
 
 #[test]
-fn shouldReturnNo() {
+fn should_return_no() {
     let arr: [u32; 2] = [1, 2];
     let actual = fair_rations(&arr);
     assert_eq!(actual, "NO");
 }
 
 #[test]
-fn shouldReturnNumber() {
+fn should_return_number() {
     let arr: [u32; 5] = [2, 3, 4, 5, 6];
     let actual = fair_rations(&arr);
     assert_eq!(actual, "4");

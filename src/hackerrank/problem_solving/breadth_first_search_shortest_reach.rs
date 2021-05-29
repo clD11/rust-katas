@@ -1,6 +1,3 @@
-use std::cmp::Ordering::Greater;
-use std::collections::LinkedList;
-
 #[derive(Debug)]
 struct Graph {
     adj: Vec<Vec<usize>>,
@@ -8,7 +5,7 @@ struct Graph {
 
 impl Graph {
     fn build(v: usize) -> Graph {
-        let mut graph = Graph {
+        let graph = Graph {
             adj: vec![vec![]; v],
         };
         graph

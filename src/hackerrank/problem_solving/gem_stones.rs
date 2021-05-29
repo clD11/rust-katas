@@ -1,5 +1,4 @@
-use std::collections::hash_map::RandomState;
-use std::collections::{HashMap, HashSet};
+use std::collections::HashSet;
 
 pub fn find_intersection(arr: Vec<String>) -> usize {
     let mut char_sets: Vec<HashSet<char>> = Vec::new();

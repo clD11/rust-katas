@@ -1,5 +1,3 @@
-use super::super::utils::*;
-
 fn balanced_sums_count(arr: &Vec<u32>) -> &str {
     let total: u32 = arr.iter().sum();
     let mut sum: u32 = 0;

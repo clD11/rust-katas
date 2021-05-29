@@ -6,7 +6,7 @@ pub fn find_pairs_to_target(input: Vec<u32>, target: u32) -> u32 {
         numbers.entry(*i).or_insert(true);
     }
     let mut number_of_pairs: u32 = 0;
-    let mut pair: u32 = 0;
+    let mut pair: u32;
     for i in input {
         if i >= target {
             pair = i - target;
@@ -20,7 +20,7 @@ pub fn find_pairs_to_target(input: Vec<u32>, target: u32) -> u32 {
 
 fn pairs_boxed() -> Box<[u32; 2]> {
     let arr: [u32; 2] = [1, 2];
-    let mut boxed: Box<[u32; 2]> = Box::new(arr);
+    let boxed: Box<[u32; 2]> = Box::new(arr);
     boxed
 }
 
