@@ -20,7 +20,10 @@ lazy_static! {
         (3, "III"),
         (2, "II"),
         (1, "I"),
-    ].iter().copied().collect();
+    ]
+    .iter()
+    .copied()
+    .collect();
 }
 
 pub fn to_roman_numeral(number: u32) -> String {

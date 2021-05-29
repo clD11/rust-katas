@@ -5,7 +5,7 @@ pub fn find_pairs_to_target(input: Vec<u32>, target: u32) -> u32 {
     for i in &input {
         numbers.entry(*i).or_insert(true);
     }
-    let mut number_of_pairs: u32= 0;
+    let mut number_of_pairs: u32 = 0;
     let mut pair: u32 = 0;
     for i in input {
         if i >= target {
@@ -33,14 +33,14 @@ fn pairs_vec() -> Vec<[u32; 2]> {
 
 #[test]
 fn should_find_pairs_to_target_value_one() {
-    let input: Vec<u32> = vec!(1, 2, 3, 4);
+    let input: Vec<u32> = vec![1, 2, 3, 4];
     let actual = find_pairs_to_target(input, 1);
     assert_eq!(actual, 3);
 }
 
 #[test]
 fn should_find_pairs_to_target_value_two() {
-    let input: Vec<u32> = vec!(1, 5, 3, 4, 2);
+    let input: Vec<u32> = vec![1, 5, 3, 4, 2];
     let actual = find_pairs_to_target(input, 2);
     assert_eq!(actual, 3);
 }

@@ -5,7 +5,7 @@
 #[derive(Debug)]
 struct Rectangle {
     width: i32,
-    height: i32
+    height: i32,
 }
 
 impl Rectangle {
@@ -13,7 +13,7 @@ impl Rectangle {
     fn square(d: i32) -> Rectangle {
         Rectangle {
             width: d,
-            height: d
+            height: d,
         }
     }
 
@@ -21,14 +21,16 @@ impl Rectangle {
         self.height * self.width
     }
 
-    fn can_hold(&self, rectangle: &Rectangle) -> bool { self.area() >= rectangle.area() }
+    fn can_hold(&self, rectangle: &Rectangle) -> bool {
+        self.area() >= rectangle.area()
+    }
 }
 
 #[test]
 fn calculate_area() {
     let rec = Rectangle {
         width: 3,
-        height: 4
+        height: 4,
     };
     let expected = 12;
     let actual = rec.area();
@@ -39,12 +41,12 @@ fn calculate_area() {
 fn can_hold() {
     let rec1 = Rectangle {
         width: 4,
-        height: 4
+        height: 4,
     };
 
     let rec2 = Rectangle {
         width: 3,
-        height: 4
+        height: 4,
     };
 
     let actual = rec1.can_hold(&rec2);

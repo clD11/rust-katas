@@ -26,5 +26,4 @@ mod tests {
         let actual = mask_character(&target, &input);
         assert_eq!(actual, "aaa#aaa");
     }
-
 }

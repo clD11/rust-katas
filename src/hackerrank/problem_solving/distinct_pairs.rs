@@ -9,8 +9,7 @@ pub fn sum(nums: &[u32], target: u32) -> u32 {
                 if nums[i] + nums[j] == target {
                     let lowest = if nums[i] < nums[j] { nums[i] } else { nums[j] };
                     let highest = if nums[i] > nums[j] { nums[i] } else { nums[j] };
-                    pairs.entry(lowest).or_default()
-                        .insert(highest);
+                    pairs.entry(lowest).or_default().insert(highest);
                 }
             }
         }

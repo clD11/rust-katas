@@ -2,14 +2,14 @@ use std::collections::{HashMap, HashSet};
 use std::ops::Index;
 
 fn two_characters(input: &str) -> i32 {
-
-    if input.chars().count() <= 1 { return 0; }
+    if input.chars().count() <= 1 {
+        return 0;
+    }
 
     let mut char_matrix: [[u8; 26]; 26] = [[0; 26]; 26];
-    let mut count_matrix: [[i32; 26]; 26] = [[0; 26]; 26];;
+    let mut count_matrix: [[i32; 26]; 26] = [[0; 26]; 26];
 
     for c in input.as_bytes() {
-
         let mut index: usize = (c - 97) as usize;
 
         for i in 0..26 {
@@ -47,6 +47,7 @@ mod tests {
     /// When you choose a character to remove, all instances of that character must be removed.
     /// Determine the longest string possible that contains just two alternating letters.
 
+    /// "aababa" = 0
     use super::*;
 
     #[test]
@@ -76,5 +77,4 @@ mod tests {
         let actual: i32 = two_characters(input);
         assert_eq!(actual, 8);
     }
-
 }

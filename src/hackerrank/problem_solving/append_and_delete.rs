@@ -1,14 +1,18 @@
 fn append_and_delete(initial: &str, desired: &str, operation: usize) -> &'static str {
-    let shortest: usize = if initial.len() < desired.len() { initial.len() } else { desired.len() };
+    let shortest: usize = if initial.len() < desired.len() {
+        initial.len()
+    } else {
+        desired.len()
+    };
     let mut index = 0;
-    for i  in 0..shortest {
+    for i in 0..shortest {
         if initial.as_bytes()[i] != desired.as_bytes()[i] {
             index = i;
             break;
         }
     }
-    if  initial.len() + desired.len() - index * 2 <= operation {
-        return "yes"
+    if initial.len() + desired.len() - index * 2 <= operation {
+        return "yes";
     }
     "no"
 }

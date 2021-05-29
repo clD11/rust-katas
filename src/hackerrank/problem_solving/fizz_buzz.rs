@@ -5,7 +5,7 @@ fn is_divisible_by(lhs: u32, rhs: u32) -> bool {
     lhs % rhs == 0
 }
 
-fn fizzbuzz(n : u32) {
+fn fizzbuzz(n: u32) {
     if is_divisible_by(n, 15) {
         println!("fizzbuzz");
     } else if is_divisible_by(n, 3) {

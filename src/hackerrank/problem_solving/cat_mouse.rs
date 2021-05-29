@@ -6,7 +6,11 @@ pub fn cat_and_mouse(x: i32, y: i32, z: i32) -> &'static str {
         return "Mouse C";
     }
 
-    if a < b { "Cat A" } else { "Cat B" }
+    if a < b {
+        "Cat A"
+    } else {
+        "Cat B"
+    }
 }
 
 #[test]

@@ -1,5 +1,5 @@
 use std::io;
-use std::io::{BufRead, Stdin};
+use std::io::BufRead;
 
 use std::collections::HashMap;
 use std::collections::HashSet;
@@ -7,9 +7,7 @@ use std::collections::HashSet;
 fn missing_numbers(arr: &Vec<u32>, brr: &Vec<u32>) -> Vec<u32> {
     let mut arr_to_freq: HashMap<&u32, i32> = HashMap::new();
     for a in arr {
-        arr_to_freq.entry(&a)
-            .and_modify(|i | { *i += 1 })
-            .or_insert(1);
+        arr_to_freq.entry(&a).and_modify(|i| *i += 1).or_insert(1);
     }
 
     let mut missing_numbers: HashSet<u32> = HashSet::new();
@@ -19,7 +17,7 @@ fn missing_numbers(arr: &Vec<u32>, brr: &Vec<u32>) -> Vec<u32> {
         if entry.is_none() || *entry.unwrap() <= 0 {
             missing_numbers.insert(b.clone());
         } else {
-            arr_to_freq.entry(&b).and_modify(|v | *v -= 1);
+            arr_to_freq.entry(&b).and_modify(|v| *v -= 1);
         }
     }
 
@@ -37,8 +35,9 @@ fn read_num() -> u32 {
 fn read_vec() -> Vec<u32> {
     let mut str_vec = String::new();
     io::stdin().read_line(&mut str_vec).expect("Fail");
-    str_vec.split_whitespace()
-        .map(|s | s.parse().unwrap())
+    str_vec
+        .split_whitespace()
+        .map(|s| s.parse().unwrap())
         .collect::<Vec<u32>>()
 }
 
@@ -57,7 +56,9 @@ mod tests {
     #[test]
     fn should_find_missing_numbers_1() {
         let arr: Vec<u32> = vec![203, 204, 205, 206, 207, 208, 203, 204, 205, 206];
-        let brr: Vec<u32> = vec![203, 204, 204, 205, 206, 207, 205, 208, 203, 206, 205, 206, 204];
+        let brr: Vec<u32> = vec![
+            203, 204, 204, 205, 206, 207, 205, 208, 203, 206, 205, 206, 204,
+        ];
         let actual: Vec<u32> = missing_numbers(&arr, &brr);
 
         let mut expected: Vec<u32> = vec![204, 205, 206];
@@ -75,5 +76,4 @@ mod tests {
 
         assert_eq!(actual, expected);
     }
-
 }

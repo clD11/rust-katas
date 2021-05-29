@@ -10,8 +10,9 @@ pub fn read_num() -> u32 {
 pub fn read_vec() -> Vec<String> {
     let mut str_vec = String::new();
     io::stdin().read_line(&mut str_vec).expect("Fail");
-    str_vec.split_whitespace()
-        .map(|s | s.parse().unwrap())
+    str_vec
+        .split_whitespace()
+        .map(|s| s.parse().unwrap())
         .collect::<Vec<String>>()
 }
 

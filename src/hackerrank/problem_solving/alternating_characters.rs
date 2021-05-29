@@ -43,5 +43,4 @@ mod test {
         let actual: u32 = count_number_deletions(input);
         assert_eq!(actual, 1);
     }
-
 }

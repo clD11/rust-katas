@@ -1,5 +1,5 @@
-use std::collections::LinkedList;
 use std::cmp::Ordering::Greater;
+use std::collections::LinkedList;
 
 #[derive(Debug)]
 struct Graph {
@@ -7,15 +7,14 @@ struct Graph {
 }
 
 impl Graph {
-
-    fn build(v :usize) -> Graph {
+    fn build(v: usize) -> Graph {
         let mut graph = Graph {
-            adj: vec![vec![]; v]
+            adj: vec![vec![]; v],
         };
         graph
     }
 
-    fn add_edge(&mut self, v : usize, w: usize) {
+    fn add_edge(&mut self, v: usize, w: usize) {
         self.adj[v].push(w);
         self.adj[w].push(v);
     }
@@ -23,7 +22,6 @@ impl Graph {
     fn adj(&mut self, v: usize) -> &Vec<usize> {
         return &self.adj[v];
     }
-
 }
 
 #[cfg(test)]
@@ -57,5 +55,4 @@ mod tests {
         assert_eq!(actual.len(), 1);
         assert_eq!(actual[0], 1);
     }
-
 }

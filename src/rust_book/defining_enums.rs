@@ -1,5 +1,5 @@
 enum IpAddrKind {
-    V4(String)
+    V4(String),
 }
 
 #[test]

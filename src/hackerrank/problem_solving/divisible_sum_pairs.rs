@@ -1,4 +1,4 @@
-pub fn  divisible_sum_pairs(n: usize, k: u32, ar: &[u32]) -> u32 {
+pub fn divisible_sum_pairs(n: usize, k: u32, ar: &[u32]) -> u32 {
     let mut count: u32 = 0;
     for i in 0..n {
         for j in (i + 1)..n {
