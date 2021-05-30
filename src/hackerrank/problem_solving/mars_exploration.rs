@@ -4,7 +4,7 @@ use std::collections::HashSet;
 fn count_difference(input: &str) -> u32 {
     let message: &[u8] = input.as_bytes();
 
-    let sos =  message.len() / 3;
+    let sos = message.len() / 3;
     if sos == 0 {
         return 0;
     }
