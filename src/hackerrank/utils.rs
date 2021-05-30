@@ -12,8 +12,6 @@ pub fn useful() {
 
     let mut num = String::new();
     io::stdin().read_line(&mut num).expect("Fail");
-
-    println!("{}", r);
 }
 
 pub fn read_str_lines(n: u32) -> Vec<String> {
