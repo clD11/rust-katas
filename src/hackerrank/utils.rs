@@ -12,9 +12,7 @@ pub fn useful() {
 
     let mut num = String::new();
     io::stdin().read_line(&mut num).expect("Fail");
-    let rotate: u8 = num.trim().parse().unwrap();
 
-    let r = encrypt(&message, rotate);
     println!("{}", r);
 }
 

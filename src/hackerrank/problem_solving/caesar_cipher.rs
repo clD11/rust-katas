@@ -23,42 +23,42 @@ mod tests {
     #[test]
     fn should_not_rotate_cipher() {
         let cipher: String = String::from("middle-Outz");
-        let actual: String = unsafe { encrypt(&cipher, 0) };
+        let actual: String = encrypt(&cipher, 0);
         assert_eq!(actual, "middle-Outz");
     }
 
     #[test]
     fn should_rotate_cipher_by_two() {
         let cipher: String = String::from("middle-Outz");
-        let actual: String = unsafe { encrypt(&cipher, 2) };
+        let actual: String = encrypt(&cipher, 2);
         assert_eq!(actual, "okffng-Qwvb");
     }
 
     #[test]
     fn should_rotate_cipher_by_five() {
         let cipher: String = String::from("Always-Look-on-the-Bright-Side-of-Life");
-        let actual: String = unsafe { encrypt(&cipher, 5) };
+        let actual: String = encrypt(&cipher, 5);
         assert_eq!(actual, "Fqbfdx-Qttp-ts-ymj-Gwnlmy-Xnij-tk-Qnkj");
     }
 
     #[test]
     fn should_rotate_cipher_by_four() {
         let cipher: String = String::from("Hello_World!");
-        let actual: String = unsafe { encrypt(&cipher, 4) };
+        let actual: String = encrypt(&cipher, 4);
         assert_eq!(actual, "Lipps_Asvph!");
     }
 
     #[test]
     fn should_rotate_cipher_unicode() {
         let cipher: String = String::from("!m-rB`");
-        let actual: String = unsafe { encrypt(&cipher, 62) };
+        let actual: String = encrypt(&cipher, 62);
         assert_eq!(actual, "!w-bL`");
     }
 
     #[test]
     fn should_rotate_cipher_long_unicode() {
         let cipher: String = String::from("!m-rB`-oN!.W`cLAcVbN/CqSoolII!SImji.!w/`Xu`uZa1TWPRq`uRBtok`xPT`lL-zPTc.BSRIhu..-!.!tcl!-U");
-        let actual: String = unsafe { encrypt(&cipher, 62) };
+        let actual: String = encrypt(&cipher, 62);
         assert_eq!(actual, "!w-bL`-yX!.G`mVKmFlX/MaCyyvSS!CSwts.!g/`He`eJk1DGZBa`eBLdyu`hZD`vV-jZDm.LCBSre..-!.!dmv!-E");
     }
 }
