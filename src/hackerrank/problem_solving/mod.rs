@@ -17,3 +17,4 @@ pub mod number_converter;
 pub mod pairs;
 pub mod sherlock_and_array;
 pub mod two_characters;
+pub mod hackerrank_string;
