@@ -18,3 +18,4 @@ pub mod pairs;
 pub mod sherlock_and_array;
 pub mod two_characters;
 pub mod hackerrank_string;
+pub mod funny_string;

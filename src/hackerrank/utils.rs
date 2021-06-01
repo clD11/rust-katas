@@ -14,6 +14,10 @@ pub fn useful() {
     io::stdin().read_line(&mut num).expect("Fail");
 }
 
+fn remove_newline(line: &str) -> String {
+    line.replace("\n", "")
+}
+
 pub fn read_str_lines(n: u32) -> Vec<String> {
     let mut result: Vec<String> = Vec::new();
     for _i in 0..n {
@@ -30,10 +34,9 @@ fn read_lines() {
     io::stdin().read_line(&mut num).expect("Fail");
     let n: u32 = num.trim().parse().unwrap();
 
+    let mut input = String::new();
     for _i in 0..n {
-        let mut str_vec = String::new();
-        io::stdin().read_line(&mut str_vec).expect("Fail");
-        str_vec.truncate(str_vec.len() - 1);
+        io::stdin().read_line(&mut input).expect("Fail");
     }
 }
 
