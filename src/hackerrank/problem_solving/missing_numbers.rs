@@ -25,29 +25,6 @@ fn missing_numbers(arr: &Vec<u32>, brr: &Vec<u32>) -> Vec<u32> {
     missing_numbers_ordered
 }
 
-fn read_num() -> u32 {
-    let mut str_num = String::new();
-    io::stdin().read_line(&mut str_num).expect("Fail");
-    str_num.trim().parse().unwrap()
-}
-
-fn read_vec() -> Vec<u32> {
-    let mut str_vec = String::new();
-    io::stdin().read_line(&mut str_vec).expect("Fail");
-    str_vec
-        .split_whitespace()
-        .map(|s| s.parse().unwrap())
-        .collect::<Vec<u32>>()
-}
-
-pub fn main() {
-    read_num();
-    let arr = read_vec();
-    read_num();
-    let brr = read_vec();
-    println!("{:?}", missing_numbers(&arr, &brr))
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;

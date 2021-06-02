@@ -28,5 +28,4 @@ mod tests {
         let actual = has_hackerrank(input);
         assert_eq!(actual, "NO");
     }
-
 }

@@ -10,6 +10,10 @@ pub fn useful() {
     io::stdin().read_line(&mut message).expect("Fail");
     message.truncate(message.len() - 1);
 
+    if message.ends_with('\n') {
+        message.pop();
+    }
+
     let mut num = String::new();
     io::stdin().read_line(&mut num).expect("Fail");
 }

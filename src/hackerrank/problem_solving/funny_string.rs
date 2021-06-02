@@ -1,8 +1,9 @@
 fn funny_string(input: &str) -> &'static str {
     let bytes = input.as_bytes();
     for i in 0..bytes.len() - 1 {
-        if i8::abs(bytes[i] as i8 - bytes[i + 1] as i8) !=
-            i8::abs(bytes[input.len() - 1 - i]  as i8 - bytes[input.len() - i - 2]  as i8) {
+        if i8::abs(bytes[i] as i8 - bytes[i + 1] as i8)
+            != i8::abs(bytes[input.len() - 1 - i] as i8 - bytes[input.len() - i - 2] as i8)
+        {
             return "Not Funny";
         }
     }
@@ -41,5 +42,4 @@ mod tests {
         let actual: &str = funny_string(input);
         assert_eq!(actual, "Not Funny");
     }
-
 }

@@ -38,33 +38,6 @@ fn what_flavours(flavours: &Vec<u32>, money: &u32) -> [u32; 2] {
     flavour_ids
 }
 
-pub fn read() {
-    let stdin = io::stdin();
-
-    let mut str_v = String::new();
-    stdin.read_line(&mut str_v).expect("fail");
-
-    for _ in 0..str_v.trim().parse().unwrap() {
-        let mut str_money = String::new();
-        stdin.read_line(&mut str_money).expect("fail");
-
-        // ignore
-        stdin.read_line(&mut String::new()).expect("fail");
-
-        let mut costs_str = String::new();
-        stdin.read_line(&mut costs_str).expect("fail");
-
-        let costs: Vec<u32> = costs_str
-            .split_whitespace()
-            .map(|s| s.parse().unwrap())
-            .collect();
-
-        let flavour_ids = what_flavours(&costs, &str_money.trim().parse().unwrap());
-
-        println!("{} {}", flavour_ids[0], flavour_ids[1]);
-    }
-}
-
 #[cfg(test)]
 mod tests {
 

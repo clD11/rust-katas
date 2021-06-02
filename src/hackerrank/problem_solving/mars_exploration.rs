@@ -1,5 +1,3 @@
-use std::collections::HashSet;
-
 // could do in place without the target message to save space
 fn count_difference(input: &str) -> u32 {
     let message: &[u8] = input.as_bytes();
