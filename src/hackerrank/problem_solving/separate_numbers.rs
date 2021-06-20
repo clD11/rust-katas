@@ -5,30 +5,25 @@ fn find_beautiful_number(input: &str) -> String {
     let mut start_index: usize = 0;
     let mut end_index: usize = digits;
 
-    let mut beautiful: bool = false;
-
     loop {
-        let current_value: u32 = u32::from_str(&input[start_index..end_index]).unwrap();
         let next_value: Vec<(usize, &str)> = input
-            .match_indices(&(current_value + 1).to_string())
+            .match_indices(
+                &(u32::from_str(&input[start_index..end_index]).unwrap() + 1).to_string(),
+            )
             .collect();
 
         if !next_value.is_empty() && next_value.get(0).unwrap().0 == end_index {
             start_index = next_value.get(0).unwrap().0;
             end_index = start_index + digits;
-            beautiful = true;
         } else {
             digits += 1;
             start_index = 0;
             end_index = digits;
-            beautiful = false;
         }
 
         if end_index >= input.len() - 1 {
-            return if beautiful {
-                let mut result = String::from("YES ");
-                result.push_str(&input[0..digits]);
-                result
+            return if !next_value.is_empty() {
+                format!("YES {}", &input[0..digits])
             } else {
                 String::from("NO")
             };
