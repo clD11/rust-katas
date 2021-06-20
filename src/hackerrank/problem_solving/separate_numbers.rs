@@ -14,7 +14,7 @@ fn find_beautiful_number(input: &str) -> String {
 
         if !next_value.is_empty() && next_value.get(0).unwrap().0 == end_index {
             start_index = next_value.get(0).unwrap().0;
-            end_index = start_index + digits;
+            end_index = start_index + next_value.get(0).unwrap().1.len();
         } else {
             digits += 1;
             start_index = 0;
@@ -40,6 +40,13 @@ mod tests {
         let input: &str = "198199200";
         let actual: String = find_beautiful_number(input);
         assert_eq!(actual, "YES 198");
+    }
+
+    #[test]
+    fn should_find_beautiful_number_nine() {
+        let input: &str = "91011";
+        let actual: String = find_beautiful_number(input);
+        assert_eq!(actual, "YES 9");
     }
 
     #[test]
