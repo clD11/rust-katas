@@ -22,11 +22,10 @@ fn find_beautiful_number(input: &str) -> String {
         }
 
         if end_index >= input.len() - 1 {
-            return if !next_value.is_empty() {
-                format!("YES {}", &input[0..digits])
-            } else {
-                String::from("NO")
-            };
+            if !next_value.is_empty() {
+                return format!("YES {}", &input[0..digits]);
+            }
+            return String::from("NO");
         };
     }
 }
