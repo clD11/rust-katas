@@ -6,14 +6,12 @@ fn find_beautiful_number(input: &str) -> String {
     let mut end_index: usize = digits;
 
     loop {
-        let next_value: Vec<(usize, &str)> = input
-            .match_indices(
-                &(u32::from_str(&input[start_index..end_index]).unwrap() + 1).to_string(),
-            )
-            .collect();
+        let num = u32::from_str(&input[start_index..end_index]).unwrap();
+        let target = num + 1;
+        let next_value: Vec<(usize, &str)> = input[start_index..].match_indices(&target.to_string()).collect();
 
-        if !next_value.is_empty() && next_value.get(0).unwrap().0 == end_index {
-            start_index = next_value.get(0).unwrap().0;
+        if !next_value.is_empty() && next_value.get(0).unwrap().0 + start_index == end_index {
+            start_index = next_value.get(0).unwrap().0 + start_index;
             end_index = start_index + next_value.get(0).unwrap().1.len();
         } else {
             digits += 1;
@@ -103,5 +101,12 @@ mod tests {
         let input: &str = "010203";
         let actual: String = find_beautiful_number(input);
         assert_eq!(actual, "NO");
+    }
+
+    #[test]
+    fn should_find_beautiful_repeated() {
+        let input: &str = "89101112131415161718192021222324";
+        let actual: String = find_beautiful_number(input);
+        assert_eq!(actual, "YES 8");
     }
 }
