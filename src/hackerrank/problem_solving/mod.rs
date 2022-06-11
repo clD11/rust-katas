@@ -18,6 +18,6 @@ pub mod mars_exploration;
 pub mod missing_numbers;
 pub mod number_converter;
 pub mod pairs;
+pub mod separate_numbers;
 pub mod sherlock_and_array;
 pub mod two_characters;
-pub mod separate_numbers;

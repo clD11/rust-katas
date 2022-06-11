@@ -8,7 +8,9 @@ fn find_beautiful_number(input: &str) -> String {
     loop {
         let num = u32::from_str(&input[start_index..end_index]).unwrap();
         let target = num + 1;
-        let next_value: Vec<(usize, &str)> = input[start_index..].match_indices(&target.to_string()).collect();
+        let next_value: Vec<(usize, &str)> = input[start_index..]
+            .match_indices(&target.to_string())
+            .collect();
 
         if !next_value.is_empty() && next_value.get(0).unwrap().0 + start_index == end_index {
             start_index = next_value.get(0).unwrap().0 + start_index;

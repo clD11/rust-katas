@@ -5,6 +5,7 @@ extern crate rand;
 use hackerrank::utils::{read_num, read_str_lines};
 
 mod hackerrank;
+mod multithreading;
 mod rust_book;
 
 fn main() {
