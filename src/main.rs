@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate lazy_static;
 extern crate rand;
+extern crate core;
 
 use hackerrank::utils::{read_num, read_str_lines};
 

@@ -2,8 +2,11 @@
 name = "rust-katas"
 version = "0.1.0"
 authors = ["clD11 <23483715+clD11@users.noreply.github.com>"]
+edition = "2021"
 
 [dependencies]
 rand = "0.7.3"
 lazy_static = "1.4.0"
+futures = "0.3"
+async-std = "1.5.0"
 #phf = {version = "0.8.0", features = ["macros"]}

@@ -47,7 +47,6 @@ fn read_lines() {
 fn read_u8() {
     let mut num = String::new();
     io::stdin().read_line(&mut num).expect("Fail");
-    let n: u8 = num.trim().parse().unwrap();
 }
 
 pub fn read_num() -> u32 {

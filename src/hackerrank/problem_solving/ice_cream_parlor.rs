@@ -1,5 +1,4 @@
 use std::collections::HashMap;
-use std::io;
 
 // O(n) opposed to binary search O(nlog(n)) or loops O(2^n)
 fn what_flavours(flavours: &Vec<u32>, money: &u32) -> [u32; 2] {
