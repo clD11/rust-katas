@@ -1,6 +1,14 @@
 use async_std::task;
 use futures::executor::block_on;
-use std::time::Duration;
+
+use std::{
+    future::Future,
+    pin::Pin,
+    sync::{Arc, Mutex},
+    task::{Context, Poll, Waker},
+    thread,
+    time::Duration,
+};
 
 // async builds state machine that implements Future
 async fn hello_world() {
@@ -36,6 +44,14 @@ async fn perform() {
     futures::join!(f1, f2);
 }
 
+// Timer
+
+pub struct TimerFuture {
+    shared_state: Arc<Mutex<SharedState>>,
+}
+
+
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -43,7 +59,7 @@ mod tests {
     #[test]
     fn test_hello_world() {
         let future = hello_world();
-        block_on(future); // executor blocks current thread
+        block_on(future); // executor blocks current thread and polls the future
     }
 
     #[test]
